@@ -43,9 +43,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="case_decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button onclick="handleProductClick(false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="case_count" type="text" class="form-control text-center" value="1">
-                           <button id="case_Increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button onclick="handleProductClick(true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5 id=case_total>$59</h5>
@@ -78,14 +78,13 @@
       </div>
 
       <script>
-      
-      document.getElementById("case_Increase").addEventListener('click',()=>{
-         handleProductClick(true)}) 
 
+    
       document.getElementById("case_decrease").addEventListener('click',()=>{
        
          handleProductClick(false) 
       })
+    //funtion with onclick
 
      function handleProductClick(isIncrease){
 
@@ -104,11 +103,36 @@
        const caseTotal=caseNewCount*59;
        document.getElementById("case_total").innerText= '$' +caseTotal;
 
+ }
+     
+ //function with id 
+      
+//        document.getElementById("case_Increase").addEventListener('click',()=>{
+//          handleProductClick(true)}) 
 
+//       document.getElementById("case_decrease").addEventListener('click',()=>{
+       
+//          handleProductClick(false) 
+//       })
 
+//      function handleProductClick(isIncrease){
 
+//       const caseInput=document.getElementById('case_count').value;
+//        const caseCount=parseInt(caseInput)
+//       //  const caseNewCount=caseCount-1;
+//        let caseNewCount=0;
+//        if (isIncrease==true){
+//          caseNewCount=caseCount+1;
+//        }
+//        if (isIncrease==false && caseCount>0){
+//          caseNewCount=caseCount-1;
+//        }
+ 
+//        document.getElementById('case_count').value=caseNewCount;
+//        const caseTotal=caseNewCount*59;
+//        document.getElementById("case_total").innerText= '$' +caseTotal;
 
-     }
+//  }
      
      //manuall system without function use
 
